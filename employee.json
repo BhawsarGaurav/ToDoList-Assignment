@@ -106,22 +106,22 @@
       "id": 14
     },
     {
+      "userId": 10,
+      "task": "totdoloist assingment",
+      "priority": "2",
+      "id": 25
+    },
+    {
       "userId": 1,
       "task": "totdoloist assingment",
-      "priority": "7",
-      "id": 23
+      "priority": "6",
+      "id": 28
     },
     {
       "userId": 1,
       "task": "totdoloist assingment",
       "priority": "4",
-      "id": 24
-    },
-    {
-      "userId": 10,
-      "task": "totdoloist assingment",
-      "priority": "2",
-      "id": 25
+      "id": 29
     }
   ]
 }

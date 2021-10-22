@@ -39,7 +39,7 @@ export default function UserDashboard() {
     axios.post(URL, TaskData);
     document.getElementById("task").value = "";
     document.getElementById("priority").value = "";
-    getData();
+        getData();
   }
   const updateTable = (tl) => {
     user[tl].task = `<strike>${user[tl].task}</strike>`;
