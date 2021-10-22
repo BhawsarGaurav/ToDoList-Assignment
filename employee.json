@@ -1,0 +1,127 @@
+{
+  "employee": [
+    {
+      "id": 1,
+      "ename": "harsh",
+      "email": "harsh@gmail.com",
+      "password": "harsh123",
+      "age": 20,
+      "mobile": 98798,
+      "city": "Indore"
+    },
+    {
+      "id": 2,
+      "ename": "naveen",
+      "email": "naveen@gmail.com",
+      "password": "naveen123",
+      "age": 24,
+      "mobile": 87857,
+      "city": "pune"
+    },
+    {
+      "id": 3,
+      "ename": "arpan",
+      "email": "arpan@gmail.com",
+      "password": "arpan123",
+      "age": 28,
+      "mobile": 85478,
+      "city": "chennai"
+    },
+    {
+      "id": 4,
+      "ename": "jeff",
+      "email": "jeff@gmail.com",
+      "password": "jeff123",
+      "age": 35,
+      "mobile": 74258,
+      "city": "kolkata"
+    },
+    {
+      "id": 5,
+      "ename": "rahul",
+      "email": "rahul@gmail.com",
+      "password": "rahul123",
+      "age": 26,
+      "mobile": 98145,
+      "city": "delhi"
+    },
+    {
+      "ename": "gaurav",
+      "email": "gaurav@gmail.com",
+      "mobile": "7746838985",
+      "city": "burhanpur",
+      "password": "gaurav123",
+      "id": 6
+    },
+    {
+      "ename": "yash mahajan",
+      "email": "yash@gmail.com",
+      "mobile": "9669659556",
+      "city": "burhanpur",
+      "password": "yash123",
+      "id": 7
+    },
+    {
+      "ename": "priyesh malegaokar",
+      "email": "priyesh@gmail.com",
+      "mobile": "9756234466",
+      "city": "indore",
+      "password": "priyesh123",
+      "id": 8
+    },
+    {
+      "ename": "paras saxsena",
+      "email": "paras@gmail.com",
+      "mobile": "7746838985",
+      "city": "delhi",
+      "password": "paras123",
+      "id": 9
+    },
+    {
+      "ename": "sandeep sawarkar",
+      "email": "sandeep@gmail.com",
+      "mobile": "7746838985",
+      "city": "burhanpur",
+      "password": "sandeep123",
+      "id": 10
+    }
+  ],
+  "todoList": [
+    {
+      "userId": 2,
+      "task": "naveens first task",
+      "priority": "5",
+      "id": 8
+    },
+    {
+      "userId": 7,
+      "task": "totdoloist assingment",
+      "priority": "2",
+      "id": 13
+    },
+    {
+      "userId": 7,
+      "task": "yash's 2nd task",
+      "priority": "5",
+      "id": 14
+    },
+    {
+      "userId": 1,
+      "task": "totdoloist assingment",
+      "priority": "7",
+      "id": 23
+    },
+    {
+      "userId": 1,
+      "task": "totdoloist assingment",
+      "priority": "4",
+      "id": 24
+    },
+    {
+      "userId": 10,
+      "task": "totdoloist assingment",
+      "priority": "2",
+      "id": 25
+    }
+  ]
+}
