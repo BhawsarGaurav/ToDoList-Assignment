@@ -3,13 +3,15 @@ import Button from "react-bootstrap/button";
 import { Container } from "react-bootstrap";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
+import UserDashboard from "./UserDashboard";
 import { Form, Col, Row } from "react-bootstrap";
 const regForName = RegExp("[a-zA-Z][a-zA-Z ]*");
 const regForEmail = RegExp("^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$");
 const regForNumber = RegExp("^[6-9][0-9]{9}$");
 const regForAge = RegExp("^[0-9]");
+const regForpassword = RegExp("^[a-zA-Z0-9]{8}$");
 
-export class Registration extends Component {
+ class Registration extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,12 +21,15 @@ export class Registration extends Component {
       city: null,
       age: null,
       password: null,
+      conPassword: null,
       errors: {
         firstname: " ",
         contact: " ",
         email: " ",
         city: " ",
         age: "",
+        password: "",
+        conPassword: "",
       },
       flag: false,
     };
@@ -58,6 +63,19 @@ export class Registration extends Component {
       case "age":
         errors.age = regForAge.test(value) && value > 18 ? "" : "Invalid age";
         break;
+
+      case "password":
+        errors.password=regForpassword.test(value)
+        ? ""
+        : "Minmum Length should be 8";
+        this.setState({password: value})
+        break;
+
+      case "conPassword":
+        errors.conPassword=value===this.state.password
+        ? ""
+        : "Password Not Match";
+        break;
     }
     this.setState({ errors, [name]: value }, () => {
       console.log(errors);
@@ -77,6 +95,7 @@ export class Registration extends Component {
 
       axios.post("http://localhost:3000/employee", formData);
       this.setState({ flag: true });
+      
     } else {
       alert("Invalid form");
     }
@@ -134,10 +153,29 @@ export class Registration extends Component {
                 <Form.Group as={Col}>
                   <Form.Label>Password</Form.Label>
                   <Form.Control
-                    type="password"
+                    name="password"
+                    type="text"
                     id="password"
                     placeholder="Password"
+                    onBlur={this.handler}
+                    
                   />
+                   {errors.password.length > 0 && (
+                    <span style={{ color: "red" }}>{errors.password}</span>
+                  )}
+                </Form.Group>
+                <Form.Group as={Col}>
+                  <Form.Label>Confirm Password</Form.Label>
+                  <Form.Control
+                    name="conPassword"
+                    type="password"
+                    id="conPassword"
+                    placeholder="Confirm Password"
+                    onBlur={this.handler}
+                  />
+                   {errors.conPassword.length > 0 && (
+                    <span style={{ color: "red" }}>{errors.conPassword}</span>
+                  )}
                 </Form.Group>
               </Row>
 

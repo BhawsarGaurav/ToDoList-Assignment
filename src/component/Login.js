@@ -8,22 +8,18 @@ import AxiosApi from "./AxiosApi";
 function Login() {
   const [employe, setEmployee] = useState([]);
 
-  const [state, setState] = useState({
-    condition: true,
-
-    login: 0,
-  });
+  const [condition, setCondition] = useState(1);
 
   useEffect(() => {
     const api = AxiosApi();
     api.get().then(function (response) {
      setEmployee(response.data);
-     console.log(response.data)
+     
    });
 
   }, []);
 
-   function checkdata() {
+    const checkdata=()=> {
     let email = document.getElementById("email").value;
     let pass = document.getElementById("password").value;
     for (const emp in employe) {
@@ -31,15 +27,15 @@ function Login() {
         alert("sucess");
         localStorage.setItem("employee", JSON.stringify(employe[emp]));
 
-        setState({ condition: false, login: 1 });
+        setCondition(0);
 
         break;
       } 
     }
-    if(!state.condition)alert("check user id and password")
+    if(condition)alert("check user id and password")
   }
 
-  const condition = state.condition;
+  
   return (
     <>
       {condition ? 

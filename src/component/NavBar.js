@@ -36,7 +36,7 @@ class NavBar extends Component {
             <Navbar.Brand>TODOLISTS</Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link
-                style={{ marginLeft: "1100px" }}
+                
                 onClick={() => this.LoggedOut()}
               >
                 LogOut

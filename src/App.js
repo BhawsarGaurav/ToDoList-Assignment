@@ -13,7 +13,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Login}></Route>
           <Route path="/navbar" component={NavBar}></Route>
-          <Route path="/changePass" component={ChangePass}></Route>
+          {/* <Route path="/changePass" component={ChangePass}></Route> */}
           <Route path="/userDashboard" component={UserDashboard}></Route>
           <Route path="/Registration" component={Registration}></Route>
         </Switch>

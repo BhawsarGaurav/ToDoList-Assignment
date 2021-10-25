@@ -84,15 +84,33 @@
       "city": "burhanpur",
       "password": "sandeep123",
       "id": 10
+    },
+    {
+      "ename": "anuj sherma",
+      "email": "anuj@gmail.com",
+      "mobile": "6745634567",
+      "city": "indore",
+      "password": "anuj123",
+      "id": 11
+    },
+    {
+      "ename": "vikas patel",
+      "email": "vikas@gmail.com",
+      "mobile": "7746838985",
+      "city": "indore",
+      "password": "vikas123",
+      "id": 12
+    },
+    {
+      "ename": "tarun patel",
+      "email": "tarun@gmail.com",
+      "mobile": "7746838985",
+      "city": "indore",
+      "password": "tarun123",
+      "id": 13
     }
   ],
   "todoList": [
-    {
-      "userId": 2,
-      "task": "naveens first task",
-      "priority": "5",
-      "id": 8
-    },
     {
       "userId": 7,
       "task": "totdoloist assingment",
@@ -112,16 +130,22 @@
       "id": 25
     },
     {
-      "userId": 1,
+      "userId": 2,
       "task": "totdoloist assingment",
-      "priority": "6",
-      "id": 28
+      "priority": "1",
+      "id": 41
     },
     {
-      "userId": 1,
+      "userId": 2,
       "task": "totdoloist assingment",
-      "priority": "4",
-      "id": 29
+      "priority": "2",
+      "id": 43
+    },
+    {
+      "userId": 2,
+      "task": "saf",
+      "priority": "3",
+      "id": 44
     }
   ]
 }
