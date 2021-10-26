@@ -1,5 +1,6 @@
 import React, { useEffect, useState,useRef } from "react";
 import Button from "react-bootstrap/button";
+import { Redirect } from "react-router-dom";
 import NavBar from "./NavBar";
 import { Table, Form, Container } from "react-bootstrap";
 import Parser from "react-html-parser";
@@ -9,11 +10,8 @@ import axios from "axios";
 export default function UserDashboard() {
 
   const [user, setUser] = useState([]);
-  const [flag, setFlag] = useState(0);
-  const [currentUserId, setCurrentUserId] = useState("");
   const priorityRef=useRef("");
   const taskRef=useRef("");
-
   const URL = "http://localhost:3000/todoList";
   let arr = JSON.parse(localStorage.getItem("employee"));
   const id = arr["id"];
@@ -32,16 +30,13 @@ export default function UserDashboard() {
     });
   }
   const addTask=()=> {
-    let priority=priorityRef.current.value;
-    console.log(priority)
-    if(priority<=5){
+  
+    if(priorityRef.current.value<=5){
     let TaskData = {
       userId: id,
       task: taskRef.current.value,
-      priority: priority
+      priority: priorityRef.current.value
     };
-  
-
     axios.post(URL, TaskData);
     getData();
     taskRef.current.value = "";
@@ -64,6 +59,7 @@ export default function UserDashboard() {
     getData();
   };
   return (
+   
     <div>
       <NavBar  />
       <h1 className="mt-3" style={{ textAlign: "center" }}>
@@ -118,6 +114,7 @@ export default function UserDashboard() {
           ))}
         </Table>
       </Container>
-    </div>
+    </div> 
+    
   );
 }

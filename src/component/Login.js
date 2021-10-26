@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 import { FloatingLabel, Container, Form } from "react-bootstrap";
 import Button from "react-bootstrap/button";
@@ -7,38 +7,43 @@ import AxiosApi from "./AxiosApi";
 
 function Login() {
   const [employe, setEmployee] = useState([]);
-
-  const [condition, setCondition] = useState(1);
-
+  const [condition, setCondition] = useState(true);
+  const [flag, setflag] = useState(true);
+  const emailRef = useRef("");
+  const passwordRef = useRef("");
   useEffect(() => {
     const api = AxiosApi();
     api.get().then(function (response) {
-     setEmployee(response.data);
-     
-   });
-
+      setEmployee(response.data);
+    });
   }, []);
-
-    const checkdata=()=> {
-    let email = document.getElementById("email").value;
-    let pass = document.getElementById("password").value;
+  let con=true;
+  const checkdata = () => {
+    const e = emailRef.current.value;
+    const p = passwordRef.current.value;
     for (const emp in employe) {
-      if (employe[emp]["email"] == email && employe[emp]["password"] == pass) {
-        alert("sucess");
+      if (employe[emp]["email"] === e && employe[emp]["password"] === p) {
         localStorage.setItem("employee", JSON.stringify(employe[emp]));
-
-        setCondition(0);
-
+        alert("sucess");
+        setflag(false);
+        
+        
+        
+         con=false;
+       
+       
+       
         break;
-      } 
+      }
     }
-    if(condition)alert("check user id and password")
-  }
+    if(con) alert("check user id and password");
+  };
 
-  
+
+
   return (
     <>
-      {condition ? 
+      {flag ? 
         <Container
           style={{
             width: "50%",
@@ -61,6 +66,7 @@ function Login() {
             <Form.Control
               type="email"
               id="email"
+              ref={emailRef}
               placeholder="name@example.com"
             />
           </FloatingLabel>
@@ -68,6 +74,7 @@ function Login() {
             <Form.Control
               type="password"
               id="password"
+              ref={passwordRef}
               placeholder="Password"
             />
           </FloatingLabel>
